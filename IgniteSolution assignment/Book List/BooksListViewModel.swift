@@ -9,7 +9,7 @@ import Foundation
 
 protocol BooksListViewProtocol: class {
   func reloadData()
-  func openWebWith(url: String)
+  func openWebWith(url: String, with _title: String)
   func showAlert(title: String, msg: String)
   func loader(startLoading: Bool)
 }
@@ -89,11 +89,11 @@ extension BooksListViewModel {
   func getItem(for index: Int) {
     let item = booksList[index]
     if let path = item.formats?.htmlPath {
-      view?.openWebWith(url: path)
+      view?.openWebWith(url: path, with: item.title!)
     } else if let path = item.formats?.pdfPath {
-      view?.openWebWith(url: path)
+      view?.openWebWith(url: path, with: item.title!)
     } else if let path = item.formats?.textPath {
-      view?.openWebWith(url: path)
+      view?.openWebWith(url: path, with: item.title!)
     } else {
       view?.showAlert(title: "Alert", msg: "Book is not available!")
     }

@@ -86,8 +86,8 @@ extension BooksListVC: BooksListViewProtocol {
     }
   }
   
-  func openWebWith(url: String) {
-    let vc = WebDisplayVC(_url: url)
+  func openWebWith(url: String, with _title: String) {
+    let vc = WebDisplayVC(_url: url, _title: _title)
     let nc = UINavigationController(rootViewController: vc)
     nc.modalPresentationStyle = .fullScreen
     present(nc, animated: true)

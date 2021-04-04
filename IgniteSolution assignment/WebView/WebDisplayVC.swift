@@ -17,9 +17,10 @@ class WebDisplayVC: UIViewController {
     return webView
   }()
   
-  convenience init(_url: String) {
+  convenience init(_url: String, _title: String) {
     self.init()
     url = _url
+    title = _title
   }
   
   override func loadView() {
