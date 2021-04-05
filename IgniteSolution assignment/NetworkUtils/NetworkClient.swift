@@ -5,22 +5,6 @@
 //  Created by Rahul Patil on 03/04/21.
 //
 
-enum NetworkError: Swift.Error {
-  
-}
-
-struct Abc: Codable {
-  var aaa: String?
-  
-  enum CodingKeys: String, CodingKey {
-    case aaa = "aaa"
-  }
-  
-  init(from decoder: Decoder) throws {
-    let values = try decoder.container(keyedBy: CodingKeys.self)
-    aaa = try values.decode(String.self, forKey: .aaa)
-  }
-}
 
 import Foundation
 class NetworkClient {
